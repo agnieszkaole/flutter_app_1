@@ -21,8 +21,8 @@ class RandomQuote extends StatelessWidget {
             content,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 30,
-              color: Colors.black,
+              fontSize: 28,
+              // color: Colors.black,
             ),
           ),
           const SizedBox(
@@ -31,8 +31,8 @@ class RandomQuote extends StatelessWidget {
           Text(
             author,
             style: const TextStyle(
-              fontSize: 25,
-              color: Colors.black,
+              fontSize: 22,
+              // color: Colors.black,
             ),
           ),
         ],

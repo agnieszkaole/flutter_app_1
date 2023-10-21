@@ -24,19 +24,28 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        // body: const CustomScrollView(
+        //   slivers: [
+        //     SliverAppBar(
+        //       title: Text('Motivea'),
+        //       centerTitle: true,
+        //     )
+        //   ],
+        // ),
         // extendBodyBehindAppBar: true,
         // appBar: AppBar(
-        //   // elevation: 0,
+        //   elevation: 0,
+        //   backgroundColor: const Color.fromRGBO(55, 48, 107, 1),
         //   title: const Text(
-        //     'Projekt 1',
+        //     'Motivea',
         //     style: TextStyle(
         //       fontSize: 30,
         //       // color: Colors.white,
         //       fontWeight: FontWeight.bold,
         //     ),
         //   ),
-
         //   centerTitle: true,
+        //   toolbarHeight: 80,
         // ),
         body: IndexedStack(
           index: currentPage,
@@ -56,10 +65,12 @@ class _HomePageState extends State<HomePage> {
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.date_range),
-              label: 'Cytat dnia',
+              label: 'Cytat na dzisiaj',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.category),
+              icon: Icon(
+                Icons.format_quote_rounded,
+              ),
               label: 'Cytaty',
             ),
             BottomNavigationBarItem(

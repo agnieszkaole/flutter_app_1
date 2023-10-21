@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_app_1/global_variables.dart';
 import 'package:flutter_app_1/widgets/single_quote.dart';

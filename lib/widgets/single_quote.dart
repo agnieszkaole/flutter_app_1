@@ -29,9 +29,9 @@ class SingleQuote extends StatelessWidget {
         // color: const Color.fromRGBO(0, 0, 0, 0.4),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(15.0),
-          side: const BorderSide(
-            color: Color.fromRGBO(255, 255, 255, 0.3),
-          ),
+          // side: const BorderSide(
+          //   color: Color.fromRGBO(255, 255, 255, 0.3),
+          // ),
         ),
         child: Stack(
           children: [
@@ -113,8 +113,8 @@ class SingleQuote extends StatelessWidget {
                                 );
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
-                                    content: Text('Dodano do ulubionych'),
-                                  ),
+                                      content: Text('Dodano do ulubionych'),
+                                      duration: Duration(milliseconds: 500)),
                                 );
                               },
                             ),
@@ -132,6 +132,7 @@ class SingleQuote extends StatelessWidget {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text('Skopiowano'),
+                                    duration: Duration(milliseconds: 500),
                                   ),
                                 );
                               },

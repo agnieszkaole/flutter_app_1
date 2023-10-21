@@ -10,22 +10,35 @@ class QuoteOfTheDay extends StatelessWidget {
   Widget build(BuildContext context) {
     final randomIndex = Random().nextInt(quotes.length);
     final quote = quotes[randomIndex];
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(20),
-              // color: const Color.fromARGB(255, 65, 65, 65),
-              child: RandomQuote(
-                content: quote['content'] as String,
-                author: quote['author'] as String,
-                id: quote['id'] as int,
-              ),
-            ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color.fromRGBO(19, 84, 122, 1),
+            Color.fromRGBO(128, 208, 199, 1),
           ],
+          stops: [0.5, 0.9],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                padding: const EdgeInsets.all(20),
+                // color: const Color.fromARGB(255, 65, 65, 65),
+                child: RandomQuote(
+                  content: quote['content'] as String,
+                  author: quote['author'] as String,
+                  id: quote['id'] as int,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

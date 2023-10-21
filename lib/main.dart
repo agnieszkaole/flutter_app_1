@@ -16,34 +16,37 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (context) => FavoriteProvider()),
-        // ChangeNotifierProvider(create: (context) => UnsplashProvider()),
-      ],
-      child: Center(
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(maxWidth: 400),
-          child: MaterialApp(
-            scrollBehavior: AppScrollBehavior(),
-            debugShowCheckedModeBanner: false,
-            title: 'Projekt 1',
-            theme: ThemeData(
-              useMaterial3: true,
-              textTheme: Theme.of(context).textTheme.apply(
-                    fontFamily: GoogleFonts.lato().fontFamily,
-                    bodyColor: const Color.fromARGB(255, 255, 255, 255),
-                    displayColor: const Color.fromARGB(255, 92, 36, 182),
-                  ),
-              colorScheme: ColorScheme.fromSeed(
-                seedColor: Colors.blueAccent,
+        providers: [
+          ChangeNotifierProvider(create: (context) => FavoriteProvider()),
+          // ChangeNotifierProvider(create: (context) => UnsplashProvider()),
+        ],
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400),
+            child: MaterialApp(
+              scrollBehavior: AppScrollBehavior(),
+              debugShowCheckedModeBanner: false,
+              title: 'Projekt 1',
+              theme: ThemeData(
+                brightness: Brightness.dark,
+                useMaterial3: true,
+                fontFamily: GoogleFonts.lato().fontFamily,
+                // colorScheme: ColorScheme.fromSeed(
+                //   seedColor: Colors.white,
+                // ),
+                // textTheme: Theme.of(context).textTheme.apply(
+                //       fontFamily: GoogleFonts.lato().fontFamily,
+                //       bodyColor: const Color.fromARGB(255, 255, 255, 255),
+                //     ),
+                // colorScheme: ColorScheme.fromSeed(
+                //   seedColor: Colors.white,
+                // ),
               ),
+              home: const HomePage(),
             ),
-            home: const HomePage(),
+            // ),
           ),
-        ),
-        // ),
-      ),
-    );
+        ));
   }
 }
 

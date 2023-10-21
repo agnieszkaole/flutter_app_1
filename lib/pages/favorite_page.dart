@@ -45,6 +45,7 @@ class FavoritePage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(
                           content: Text('Skopiowano'),
+                          duration: Duration(milliseconds: 500),
                         ),
                       );
                     },

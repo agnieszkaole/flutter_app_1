@@ -31,6 +31,7 @@ class MyApp extends StatelessWidget {
                 brightness: Brightness.dark,
                 useMaterial3: true,
                 fontFamily: GoogleFonts.lato().fontFamily,
+
                 // colorScheme: ColorScheme.fromSeed(
                 //   seedColor: Colors.white,
                 // ),

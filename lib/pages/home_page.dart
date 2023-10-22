@@ -24,29 +24,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        // body: const CustomScrollView(
-        //   slivers: [
-        //     SliverAppBar(
-        //       title: Text('Motivea'),
-        //       centerTitle: true,
-        //     )
-        //   ],
-        // ),
-        // extendBodyBehindAppBar: true,
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: const Color.fromRGBO(55, 48, 107, 1),
-        //   title: const Text(
-        //     'Motivea',
-        //     style: TextStyle(
-        //       fontSize: 30,
-        //       // color: Colors.white,
-        //       fontWeight: FontWeight.bold,
-        //     ),
-        //   ),
-        //   centerTitle: true,
-        //   toolbarHeight: 80,
-        // ),
         body: IndexedStack(
           index: currentPage,
           children: pages,
@@ -54,8 +31,8 @@ class _HomePageState extends State<HomePage> {
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
           iconSize: 30,
-          selectedFontSize: 18,
-          unselectedFontSize: 16,
+          selectedFontSize: 0,
+          unselectedFontSize: 0,
           onTap: (value) {
             setState(() {
               currentPage = value;
@@ -64,18 +41,21 @@ class _HomePageState extends State<HomePage> {
           currentIndex: currentPage,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.date_range),
-              label: 'Cytat na dzisiaj',
+              icon: Icon(Icons.home),
+              // label: 'Home',
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.format_quote_rounded,
               ),
-              label: 'Cytaty',
+              // label: 'Lista cytatów',
+              label: '',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.favorite),
-              label: 'Ulubione',
+              // label: 'Ulubione',
+              label: '',
             ),
           ],
         ),

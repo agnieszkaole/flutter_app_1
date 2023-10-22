@@ -14,14 +14,16 @@ class RandomQuote extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return Padding(
+      padding: const EdgeInsets.all(25.0),
       child: Column(
         children: [
           Text(
             content,
             textAlign: TextAlign.center,
             style: const TextStyle(
-              fontSize: 28,
+              fontSize: 24, height: 1.2,
+              fontWeight: FontWeight.bold,
               // color: Colors.black,
             ),
           ),
@@ -31,9 +33,11 @@ class RandomQuote extends StatelessWidget {
           Text(
             author,
             style: const TextStyle(
-              fontSize: 22,
+              fontSize: 20,
+
               // color: Colors.black,
             ),
+            textAlign: TextAlign.right,
           ),
         ],
       ),

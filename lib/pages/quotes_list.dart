@@ -36,36 +36,41 @@ class _QuotesListState extends State<QuotesList> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 600),
-        child: FutureBuilder<String>(
-          future: getData(),
-          builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-            if (snapshot.hasData) {
-              return ListView.builder(
-                  // scrollDirection: Axis.horizontal,
-                  // shrinkWrap: true,
-                  itemCount: quotes.length,
-                  itemBuilder: (context, index) {
-                    final quote = quotes[index];
-                    return SingleQuote(
-                      content: quote['content'] as String,
-                      author: quote['author'] as String,
-                      id: quote['id'] as int,
-                      imgUrl: imgUrl,
-                    );
-                  });
-            } else if (snapshot.hasError) {
-              return const Text("BŁĄD");
-            } else {
-              return const SizedBox(
-                width: 60,
-                height: 60,
-                child: CircularProgressIndicator(),
-              );
-            }
-          },
-        ),
+      child: FutureBuilder<String>(
+        future: getData(),
+        builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
+          if (snapshot.hasData) {
+            return Column(
+              children: [
+                Expanded(
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      // itemCount: quotes.length < 10 ? quotes.length : 10,
+                      // itemCount: quotes.length.clamp(0, 10),
+                      itemCount: quotes.length,
+                      itemBuilder: (context, index) {
+                        final quote = quotes[index];
+
+                        return SingleQuote(
+                          content: quote['content'] as String,
+                          author: quote['author'] as String,
+                          id: quote['id'] as int,
+                          imgUrl: imgUrl,
+                        );
+                      }),
+                ),
+              ],
+            );
+          } else if (snapshot.hasError) {
+            return const Text("BŁĄD");
+          } else {
+            return const SizedBox(
+              width: 60,
+              height: 60,
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
       ),
     );
   }

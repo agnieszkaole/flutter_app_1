@@ -12,15 +12,21 @@ class QuoteOfTheDay extends StatelessWidget {
     final quote = quotes[randomIndex];
     return Container(
       decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromRGBO(19, 84, 122, 1),
-            Color.fromRGBO(128, 208, 199, 1),
-          ],
-          stops: [0.5, 0.9],
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-        ),
+        // gradient: LinearGradient(
+        //   colors: [
+        //     Color.fromRGBO(54, 116, 214, 1),
+        //     Color.fromRGBO(30, 60, 114, 1),
+        //   ],
+        //   stops: [0.2, 0.9],
+        //   begin: Alignment.topCenter,
+        //   end: Alignment.bottomCenter,
+        // ),
+        image: DecorationImage(
+            image: AssetImage(
+              // ('assets/images/estefania-cortes-uzDs1Jr_mOM-unsplash.jpg'),
+              ('assets/images/freezydreamin-0Bj1foVFTdU-unsplash.jpg'),
+            ),
+            fit: BoxFit.cover),
       ),
       child: Padding(
         padding: const EdgeInsets.all(20.0),

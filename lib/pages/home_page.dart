@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app_1/pages/favorite_page.dart';
 // import 'package:flutter_app_1/pages/quote_of_the_day_test.dart';
-import 'package:flutter_app_1/pages/quote_of_the_day.dart';
-import 'package:flutter_app_1/pages/quotes_list.dart';
+import 'package:flutter_app_1/pages/quote_of_the_day_page.dart';
+import 'package:flutter_app_1/pages/quotes_list_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

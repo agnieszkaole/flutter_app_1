@@ -34,8 +34,6 @@ class RandomQuote extends StatelessWidget {
             author,
             style: const TextStyle(
               fontSize: 20,
-
-              // color: Colors.black,
             ),
             textAlign: TextAlign.right,
           ),

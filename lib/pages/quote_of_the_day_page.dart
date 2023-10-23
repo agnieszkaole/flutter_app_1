@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app_1/pages/random_quote.dart';
+import 'package:flutter_app_1/widgets/random_quote.dart';
 import 'package:flutter_app_1/global_variables.dart';
 import 'dart:math';
 
@@ -12,15 +12,6 @@ class QuoteOfTheDay extends StatelessWidget {
     final quote = quotes[randomIndex];
     return Container(
       decoration: const BoxDecoration(
-        // gradient: LinearGradient(
-        //   colors: [
-        //     Color.fromRGBO(54, 116, 214, 1),
-        //     Color.fromRGBO(30, 60, 114, 1),
-        //   ],
-        //   stops: [0.2, 0.9],
-        //   begin: Alignment.topCenter,
-        //   end: Alignment.bottomCenter,
-        // ),
         image: DecorationImage(
             image: AssetImage(
               // ('assets/images/estefania-cortes-uzDs1Jr_mOM-unsplash.jpg'),

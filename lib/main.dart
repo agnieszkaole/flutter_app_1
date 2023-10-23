@@ -31,17 +31,6 @@ class MyApp extends StatelessWidget {
                 brightness: Brightness.dark,
                 useMaterial3: true,
                 fontFamily: GoogleFonts.lato().fontFamily,
-
-                // colorScheme: ColorScheme.fromSeed(
-                //   seedColor: Colors.white,
-                // ),
-                // textTheme: Theme.of(context).textTheme.apply(
-                //       fontFamily: GoogleFonts.lato().fontFamily,
-                //       bodyColor: const Color.fromARGB(255, 255, 255, 255),
-                //     ),
-                // colorScheme: ColorScheme.fromSeed(
-                //   seedColor: Colors.white,
-                // ),
               ),
               home: const HomePage(),
             ),

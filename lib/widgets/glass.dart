@@ -28,10 +28,7 @@ class GlassMorphism extends StatelessWidget {
                 end: AlignmentDirectional.bottomEnd,
               ),
               borderRadius: BorderRadius.all(Radius.circular(10)),
-              // border: Border.all(
-              //   width: 1.5,
-              //   color: const Color.fromRGBO(0, 0, 0, 0.2),
-              // ),,
+
             ),
             child: child,
           )),

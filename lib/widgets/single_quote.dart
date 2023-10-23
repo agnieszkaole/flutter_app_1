@@ -38,105 +38,92 @@ class SingleQuote extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              // color: const Color.fromRGBO(0, 0, 0, 0.2),
-
-              // margin: const EdgeInsets.all(10),
-              GlassMorphism(
-                start: 0.9,
-                end: 0.6,
-                child: Container(
-                  padding: const EdgeInsets.all(20),
-                  child: Column(
-                    children: [
-                      Text(
-                        content,
-                        style: const TextStyle(
-                          fontSize: 20,
-                          height: 1.2,
-                          fontWeight: FontWeight.bold,
-                          // shadows: [
-                          //   Shadow(
-                          //     color: Color.fromARGB(255, 31, 31, 31),
-                          //     blurRadius: 3.0,
-                          //     offset: Offset(1.0, 1.0),
-                          //   ),
-                          // ],
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        author,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      SizedBox(
-                        width: 120,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            IconButton(
-                              iconSize: 28,
-                              icon: const Icon(
-                                Icons.favorite_border,
-                                color: Colors.white,
-                              ),
-                              onPressed: () {
-                                Provider.of<FavoriteProvider>(context,
-                                        listen: false)
-                                    .addQuote(
-                                  {
-                                    'content': content,
-                                    'author': author,
-                                    'id': id,
-                                  },
-                                );
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Dodano do ulubionych'),
-                                      duration: Duration(milliseconds: 200)),
-                                );
-                              },
-                            ),
-                            IconButton(
-                              iconSize: 28,
-                              icon: const Icon(Icons.copy_outlined,
-                                  color: Colors.white),
-                              onPressed: () {
-                                final copyQuote = '$content $author ';
-                                Clipboard.setData(
-                                  ClipboardData(
-                                    text: copyQuote,
-                                  ),
-                                );
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Skopiowano'),
-                                    duration: Duration(milliseconds: 200),
-                                  ),
-                                );
-                              },
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+        child: Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+          GlassMorphism(
+            start: 0.9,
+            end: 0.6,
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                children: [
+                  Text(
+                    content,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      height: 1.2,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
-                ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    author,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(
+                    width: 120,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        IconButton(
+                          iconSize: 28,
+                          icon: const Icon(
+                            Icons.favorite_border,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {
+                            Provider.of<FavoriteProvider>(context,
+                                    listen: false)
+                                .addQuote(
+                              {
+                                'content': content,
+                                'author': author,
+                                'id': id,
+                              },
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                  content: Text('Dodano do ulubionych'),
+                                  duration: Duration(milliseconds: 200)),
+                            );
+                          },
+                        ),
+                        IconButton(
+                          iconSize: 28,
+                          icon: const Icon(Icons.copy_outlined,
+                              color: Colors.white),
+                          onPressed: () {
+                            final copyQuote = '$content $author ';
+                            Clipboard.setData(
+                              ClipboardData(
+                                text: copyQuote,
+                              ),
+                            );
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text('Skopiowano'),
+                                duration: Duration(milliseconds: 200),
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
-            ]),
+            ),
+          ),
+        ]),
       ),
     );
   }
